@@ -1,52 +1,6 @@
 version: 2
-
-update_configs:
-  - package_manager: "ruby:bundler"
-    update_schedule: "daily"
-    directory: "/"
-    target_branch: "master"
-    allowed_updates:
-      - match:
-          update_type: "all"
-          dependency_type: "direct"
-      - match:
-          update_type: "security"
-          dependency_type: "indirect"
-    version_requirement_updates: "off"
-    automerged_updates:
-      - match:
-          dependency_type: "all"
-          update_type: "semver:patch"
-      - match:
-          dependency_type: "all"
-          update_type: "security:patch"
-    default_assignees:
-      - "purp"
-    default_labels:
-      - "dependencies"
-      - "ruby"
-
-  - package_manager: "javascript"
-    update_schedule: "daily"
-    directory: "/"
-    target_branch: "master"
-    allowed_updates:
-      - match:
-          update_type: "all"
-          dependency_type: "direct"
-      - match:
-          update_type: "security"
-          dependency_type: "indirect"
-    version_requirement_updates: "auto"
-    automerged_updates:
-      - match:
-          dependency_type: "all"
-          update_type: "semver:patch"
-      - match:
-          dependency_type: "all"
-          update_type: "security:patch"
-    default_assignees:
-      - "purp"
-    default_labels:
-      - "dependencies"
-      - "javascript"
+updates:
+  - package-ecosystem: 'bundler'
+    directory: '/'
+    schedule:
+      interval: 'daily'
